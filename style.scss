@@ -1,0 +1,274 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: #fff; 
+  font-family: HelvNowReg
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+    font-family: HelvNowBlk;
+    src: url(/fonts/HelveticaNowDisplay-Black.otf);
+  }
+@font-face {
+    font-family: HelvNowReg;
+    src: url(/fonts/HelveticaNowDisplay-Regular.otf);
+  }
+.container {
+    display: flex;
+}
+.texture {
+    width: 100%;
+    height: 100vh;
+    background: url(https://www.transparenttextures.com/patterns/cardboard.png);
+    position: fixed;
+    z-index: -1;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+}
+    .left {
+        width: 50%;
+        height: 100vh;
+        padding: 125px 25px 50px 50px;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    }
+.right {
+    width: 50%;
+    height: 100%;
+}
+.left h1 {
+    font-size: 1.7em;
+    color: #303030;
+}
+.center {
+    font-size: 100px;
+    font-family: HelvNowBlk;
+}
+.left-col {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+}
+.left-col ul > li:nth-child(1) {
+    font-weight: 800;
+    color: #303030;
+    margin-bottom: 7.5px;
+}
+.left-col ul {
+    padding-left: 0;
+}
+.left-col ul > li {
+    color: #969696;
+    list-style: none;
+    font-size: 14px;
+}
+.inner-cont {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.inner-cont img {
+    width: 100%;
+    max-width: 500px;
+    z-index: 111
+    
+    ;
+}
+
+.r-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 105px 25px 50px 50px;
+    background: #ff0000;
+    color: #fbfbfb;
+    transition: background .5s;
+}
+.p-title {
+    font-size: 65px;
+    border-bottom: 20px double black;
+    cursor: cell;
+    z-index: 1;
+    transition: .3s;
+}
+.p-title::after {
+    content: "↗";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+.p-title:hover {
+    color: black;
+    padding-left: 5%;
+}
+
+.plus {
+    color: #ff0000;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+}
+.black-and-white {
+    color: #303030;
+    background: transparent;
+
+}
+
+.loader {
+  height: 100vh;
+    width: 100%;
+    position: fixed;
+    background: black;
+    z-index: 99999;
+    animation: loading 3s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+  0% {
+    
+  }
+  50% {
+    transform: translateX(50%);
+    background: black;
+  }
+  75% {
+    background: black;
+  }
+  99% {
+    display: block;
+  }
+  100% {
+    transform: translateY(100%) translateX(50%);
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .p-title {
+    font-size: 45px;
+}
+.center {
+  font-size: 70px;
+}
+}
+@media only screen and (max-width: 768px) {
+.container {
+  flex-wrap: wrap;
+}
+.left {
+  height: 100%;
+  width:100%;
+  position: relative;
+}
+.right {
+  width: 100%;
+}
+.loader {
+  display:none;
+}
+.p-title {
+    font-size: 55px;
+    width: fit-content;
+}
+}
+@media only screen and (max-width: 425px) {
+.p-title {
+    font-size: 35px;
+    border-bottom: 10px double black;
+}
+.inner-col {
+  display: flex;
+  width: 100%;
+}
+.left-col ul {
+  margin-right: 50px;
+}
+.left {
+  padding: 125px 25px 50px;
+}
+.left-col {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+}
